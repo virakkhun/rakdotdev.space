@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Breadcrumb from '../../components/breadcrumb.svelte';
-	import { BLOGS_TREE } from './constants/blogs-tree';
 	import FileTree from '../../components/fe/file-tree.svelte';
 	import { base } from '$app/paths';
+	import type { PageServerData } from './$types';
 
-	const blogsTree = BLOGS_TREE;
+	export let data: PageServerData;
+	const blogsTree = data;
 	const _breadcrumbs = [
 		{ link: `${base}/`, label: 'home' },
 		{ link: `${base}/blogs`, label: 'blogs' }
